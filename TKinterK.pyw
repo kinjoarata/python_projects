@@ -8,7 +8,7 @@ from tkinter import messagebox
 from tkinter import filedialog
 from pathlib import Path
 
-
+# フォーム
 class FormK(tk.Tk):
     pass
 
@@ -34,8 +34,8 @@ class FormK(tk.Tk):
     def geometry(self,newGeometry=None):
         super(FormK, self).geometry(newGeometry)
         sp = newGeometry.split("x")
-        self.WIDTH  = int(sp[0])
-        self.HEIGHT = int(sp[1])
+        self.HEIGHT = int(sp[0])
+        self.WIDTH  = int(sp[1])
 
 
     ## メッセージボックス
@@ -102,10 +102,10 @@ class FormK(tk.Tk):
                     #print(s_layout)
 
                     self.children[v].place_configure(
-                        relx     =round((float(self.PAD_OUT) + ((int(sp[0])-1) * n_width_one)  + ((int(sp[0]) - 1) * self.PAD_IN)) / self.WIDTH ,4)
-                       ,rely     =round((float(self.PAD_OUT) + ((int(sp[1])-1) * n_height_one) + ((int(sp[1]) - 1) * self.PAD_IN)) / self.HEIGHT ,4)
-                       ,relwidth =round(((int(sp[2]) * n_width_one)  + ((int(sp[2]) - 1) * self.PAD_IN)) / self.WIDTH ,4)
-                       ,relheight=round(((int(sp[3]) * n_height_one) + ((int(sp[3]) - 1) * self.PAD_IN)) / self.HEIGHT ,4)
+                        rely     =round((float(self.PAD_OUT) + ((int(sp[0])-1) * n_width_one)  + ((int(sp[0]) - 1) * self.PAD_IN)) / self.WIDTH ,4)
+                       ,relx     =round((float(self.PAD_OUT) + ((int(sp[1])-1) * n_height_one) + ((int(sp[1]) - 1) * self.PAD_IN)) / self.HEIGHT ,4)
+                       ,relheight=round(((int(sp[2]) * n_width_one)  + ((int(sp[2]) - 1) * self.PAD_IN)) / self.WIDTH ,4)
+                       ,relwidth =round(((int(sp[3]) * n_height_one) + ((int(sp[3]) - 1) * self.PAD_IN)) / self.HEIGHT ,4)
                     )
             except:
                 print("No TkinterK Object(" + v +").")
@@ -114,6 +114,8 @@ class FormK(tk.Tk):
 
         pass
 
+# 以下ABC順
+
 class ButtonK(tk.Button):
     pass
     
@@ -121,6 +123,19 @@ class ButtonK(tk.Button):
         super(ButtonK, self).__init__()
         self.layout = None
 
+class CanvasK(tk.Canvas):
+    pass
+    
+    def __init__(self):
+        super(CanvasK, self).__init__()
+        self.layout = None
+
+class CheckbuttonK(tk.Checkbutton):
+    pass
+    
+    def __init__(self):
+        super(CheckbuttonK, self).__init__()
+        self.layout = None
 
 class EntryK(tk.Entry):
     pass
@@ -131,11 +146,53 @@ class EntryK(tk.Entry):
         self["highlightthickness"] = 1
         self.config(highlightcolor= "red")
 
-class ProgressbarK(ttk.Progressbar):
+class FrameK(tk.Frame):
     pass
     
     def __init__(self):
-        super(ProgressbarK, self).__init__()
+        super(FrameK, self).__init__()
+        self.layout = None
+
+class LabelFrameK(tk.LabelFrame):
+    pass
+    
+    def __init__(self):
+        super(LabelFrameK, self).__init__()
+        self.layout = None
+
+class LabelK(tk.Label):
+    pass
+    
+    def __init__(self):
+        super(LabelK, self).__init__()
+        self.layout = None
+
+class ListboxK(tk.Listbox):
+    pass
+    
+    def __init__(self):
+        super(ListboxK, self).__init__()
+        self.layout = None
+
+class MenubuttonK(tk.Menubutton):
+    pass
+    
+    def __init__(self):
+        super(MenubuttonK, self).__init__()
+        self.layout = None
+
+class MenuK(tk.Menu):
+    pass
+    
+    def __init__(self):
+        super(MenuK, self).__init__()
+        self.layout = None
+
+class MessageK(tk.Message):
+    pass
+    
+    def __init__(self):
+        super(MessageK, self).__init__()
         self.layout = None
 
 class PanedWindowK(tk.PanedWindow):
@@ -145,30 +202,12 @@ class PanedWindowK(tk.PanedWindow):
         super(PanedWindowK, self).__init__()
         self.layout = None
 
-
-class LabelFrameK(tk.LabelFrame):
+class ProgressbarK(ttk.Progressbar):
     pass
     
     def __init__(self):
-        super(LabelFrameK, self).__init__()
+        super(ProgressbarK, self).__init__()
         self.layout = None
-
-
-class SpinboxK(tk.Spinbox):
-    pass
-    
-    def __init__(self):
-        super(SpinboxK, self).__init__()
-        self.layout = None
-
-
-class TextK(tk.Text):
-    pass
-    
-    def __init__(self):
-        super(TextK, self).__init__()
-        self.layout = None
-
 
 class RadiobuttonK(tk.Radiobutton):
     pass
@@ -177,70 +216,19 @@ class RadiobuttonK(tk.Radiobutton):
         super(RadiobuttonK, self).__init__()
         self.layout = None
 
-
-class MessageK(tk.Message):
+class SpinboxK(tk.Spinbox):
     pass
     
     def __init__(self):
-        super(MessageK, self).__init__()
+        super(SpinboxK, self).__init__()
         self.layout = None
 
-
-class MenubuttonK(tk.Menubutton):
+class TextK(tk.Text):
     pass
     
     def __init__(self):
-        super(MenubuttonK, self).__init__()
+        super(TextK, self).__init__()
         self.layout = None
-
-
-class MenuK(tk.Menu):
-    pass
-    
-    def __init__(self):
-        super(MenuK, self).__init__()
-        self.layout = None
-
-
-class ListboxK(tk.Listbox):
-    pass
-    
-    def __init__(self):
-        super(ListboxK, self).__init__()
-        self.layout = None
-
-
-
-class LabelK(tk.Label):
-    pass
-    
-    def __init__(self):
-        super(LabelK, self).__init__()
-        self.layout = None
-
-class CanvasK(tk.Canvas):
-    pass
-    
-    def __init__(self):
-        super(CanvasK, self).__init__()
-        self.layout = None
-
-
-class CheckbuttonK(tk.Checkbutton):
-    pass
-    
-    def __init__(self):
-        super(CheckbuttonK, self).__init__()
-        self.layout = None
-
-
-class FrameK(tk.Frame):
-    pass
-    
-    def __init__(self):
-        super(FrameK, self).__init__()
-        self.layout = None
-
 
 class TreeviewK(ttk.Treeview):
     pass

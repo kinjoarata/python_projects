@@ -14,7 +14,7 @@ from tkinter import filedialog
 from pathlib import Path
 
 #### rootフレームの設定
-root = tkk.FormK(20,10,10)
+root = tkk.FormK(10,20,10)
 root.title("Excel Grepy")
 root.geometry("1000x800")
 
@@ -196,7 +196,7 @@ def tree_row_dclick(self):
 btnQuit = tkk.ButtonK()
 btnQuit["text"] = "終了"
 btnQuit["command"] = root.destroy
-btnQuit.layout = "10,1,1,1"
+btnQuit.layout = "1,10,1,1"
 
 
 # ラベルの生成
@@ -211,7 +211,7 @@ progress.configure( value=0
                   , mode='determinate'
                   , maximum=1000
                   , length=600)
-progress.layout = "2,1,8,1"
+progress.layout = "1,2,1,8"
 
 
 ## 2 row ################################################
@@ -220,17 +220,17 @@ lblFilePath = tkk.LabelK()
 lblFilePath["text"] = "フォルダパス"
 lblFilePath["bg"] = root.bg
 lblFilePath["anchor"] = "e"
-lblFilePath.layout = "1,2,1,1"
+lblFilePath.layout = "2,1,1,1"
 
 # 入力ボックス(FilePath)
 txtPath = tkk.EntryK()
-txtPath.layout = "2,2,8,1"
+txtPath.layout = "2,2,1,8"
 
 # 参照ボタン
 btnFolderDir = tkk.ButtonK()
 btnFolderDir["text"] = "参照"
 btnFolderDir["command"] = btnFolderDir_click
-btnFolderDir.layout = "10,2,1,1"
+btnFolderDir.layout = "2,10,1,1"
 
 
 ## 3 row ################################################
@@ -239,11 +239,11 @@ lblFilePath = tkk.LabelK()
 lblFilePath["text"] = "検索文字列"
 lblFilePath["bg"] = root.bg
 lblFilePath["anchor"] = "e"
-lblFilePath.layout = "1,3,1,1"
+lblFilePath.layout = "3,1,1,1"
 
 # 検索文字
 txtStr = tkk.EntryK()
-txtStr.layout = "2,3,8,1"
+txtStr.layout = "3,2,1,8"
 
 ## 4 row ################################################
 # ラベルの生成
@@ -251,12 +251,12 @@ lblCond = tkk.LabelK()
 lblCond["text"] = "検索結果"
 lblCond["bg"] = root.bg
 lblCond["anchor"] = "e"
-lblCond.layout = "1,4,1,1"
+lblCond.layout = "4,1,1,1"
 
 lblCondResult = tkk.LabelK()
 lblCondResult["textvariable"] = root.result
 lblCondResult["anchor"] = "w"
-lblCondResult.layout = "2,4,8,1"
+lblCondResult.layout = "4,2,1,8"
 
 
 ## 5 row ################################################
@@ -265,17 +265,17 @@ lblCondResult.layout = "2,4,8,1"
 btnGrep = tkk.ButtonK()
 btnGrep["text"] = "Grep"
 btnGrep["command"] = btnGrep_click
-btnGrep.layout = "10,5,1,1"
+btnGrep.layout = "5,10,1,1"
 
 btnCheck = tkk.ButtonK()
 btnCheck["text"] = "精 査"
 btnCheck["command"] = btnCheck_click
-btnCheck.layout = "9,5,1,1"
+btnCheck.layout = "5,9,1,1"
 
 btnCheck = tkk.ButtonK()
 btnCheck["text"] = "クリア"
 btnCheck["command"] = btnClear_click
-btnCheck.layout = "1,5,1,1"
+btnCheck.layout = "5,1,1,1"
 
 
 ## 6-20 row ################################################
@@ -295,7 +295,7 @@ tree.bind('<Double-1>', tree_row_dclick)
 # ツリービューのスタイル変更
 style = ttk.Style()
 #tree.pack(fill="both",padx=3,pady=3 ,expand=1)
-tree.layout = "1,6,10,15"
+tree.layout = "6,1,15,10"
 
 
 root.set_layout()
